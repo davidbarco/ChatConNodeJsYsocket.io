@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con socket.io y node js</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="main.js"></script>
+
+    <style>
+        *{
+            margin: 0; padding: 0; box-sizing: border-box;
+        }
+
+    #messages{
+        width: 100%;
+        
+        height: 350px;
+        overflow: scroll;
+        border: 1px solid #eee;
+        box-shadow: 0px 0px 20px #ccc inset;
+        background-color: black;
+    }
+    .message{
+        margin: 20px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background: rgb(152, 161, 26);
+    }
+     .titulo{
+         height: 80px;
+         line-height: 100px;
+         font-size: 25px;
+         text-align: center;
+         color: white;
+         background-color: green;
+         
+     }
+
+     form{
+         display: flex;
+     }
+     
+     .enviar{
+         width: 100%;
+         background-color: green;
+         color: white;
+         
+         padding: 10px;
+         
+     }
+     #nickname{
+         background-color: rgb(135, 211, 21);
+         box-shadow: 0px 0px 20px rgb(104, 226, 23) ; 
+          
+     }
+#text{ 
+    width: 100%;
+    height: 60px;
+    background-color: rgb(135, 211, 21);
+         box-shadow: 0px 0px 20px rgb(103, 214, 28) ; 
+
+}
+body{
+    background-color: rgb(26, 109, 23);
+    
+}
+form{
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+}
+
+
+    </style>
+
+</head>
+<body>
+    
+<h1 class="titulo">Chat Familiar Barco</h1>
+
+<div id="messages"></div>
+
+<form onsubmit="return addMessage(this);">
+ <input type="text" id="nickname" placeholder="Ingresa tu Nombre">
+ <textarea name="" id="text" cols="10" rows="2" placeholder="Mensaje..."></textarea>
+ <input class="enviar" type="submit" value="Enviar">
+
+</form>
+
+</body>
+</html>
